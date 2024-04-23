@@ -10,6 +10,12 @@ def reverse_string():
     #interval is used, start defaults to the end of the string, and stop to the beginning
     print("Reversed string:", input_string[::-1])
 
+    # Check for palindrome:
+    if input_string == input_string[::-1]:
+        print("This string is a plaindrome")
+    else:
+        print("This string is not a palindrome")
+
     #reverse the string but exclude first and last characters
     #print("Reversed string:", input_string[len(input_string) - 2:0:-1])
 

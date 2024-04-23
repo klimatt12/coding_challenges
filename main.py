@@ -10,7 +10,7 @@ if __name__ == '__main__':
     challenges.reverse_string()
     print()
     """
-    Using this and the commented out code in reverse_string on lines 16 and 17 
+    Using this and the commented out code in reverse_string on lines 22 and 23 
     you can move reading the input and printing the  original and modified strings here
      
     input_string = input("Provide a string: ")
