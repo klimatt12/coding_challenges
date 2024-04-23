@@ -34,3 +34,12 @@ def dictionaries():
             # If the key doesn't exist, create a new key-value pair with the word
             word_dict[first_char] = [word]
     print(word_dict)
+
+
+def towers_of_hanoi(n, source, target, intermediate):
+    if n == 1:
+        print(f"Move disk 1 from {source} to {target}")
+        return
+    towers_of_hanoi(n-1, source, intermediate, target)
+    print(f"Move disk {n} from {source} to {target}")
+    towers_of_hanoi(n-1, intermediate, target, source)
