@@ -20,3 +20,5 @@ if __name__ == '__main__':
     print("Reversed string:", reversed_string)
     """
 
+    challenges.dictionaries()
+

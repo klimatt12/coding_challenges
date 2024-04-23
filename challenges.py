@@ -15,3 +15,22 @@ def reverse_string():
 
     # def reverse_string(input_string):
     #     return input_string[::-1]
+
+
+def dictionaries():
+    # Creates a dictionary where the keys are the first letters of any word in a list, and the values are
+    # all words in the list that start with that letter.
+    words = ["ape", "banana", "catalyst", "annabelle"]
+
+    word_dict = {}
+
+    for word in words:
+        # Get the first character of the word
+        first_char = word[0]
+        if first_char in word_dict:
+            # If the key exists, append the word to the corresponding value list
+            word_dict[first_char].append(word)
+        else:
+            # If the key doesn't exist, create a new key-value pair with the word
+            word_dict[first_char] = [word]
+    print(word_dict)
