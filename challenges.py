@@ -47,13 +47,14 @@ def dictionaries():
     print(alphabetical_dict)
 
 
-def towers_of_hanoi(n, source, target, intermediate):
+def towers_of_hanoi(n, source, target, intermediate, move=1):
     #move the smallest disc to the destination and quit
     if n == 1:
-        print(f"Move disk 1 from {source} to {target}")
-        return
+        print(f"Move {move}: Move disk 1 from {source} to {target}")
+        return move +1
     # Move discs from the source to the intermediate tower, using the target as a staging ground
-    towers_of_hanoi(n-1, source, intermediate, target)
-    print(f"Move disk {n} from {source} to {target}")
+    move = towers_of_hanoi(n-1, source, intermediate, target, move)
+    print(f"Move {move}: Move disk {n} from {source} to {target}")
     #Move discs from intermediate to target using source as a staging ground
-    towers_of_hanoi(n-1, intermediate, target, source)
+    move = towers_of_hanoi(n-1, intermediate, target, source, move + 1)
+    return move
