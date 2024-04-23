@@ -22,7 +22,13 @@ def dictionaries():
     # all words in the list that start with that letter.
     words = ["ape", "banana", "catalyst", "annabelle"]
 
-    word_dict = {}
+    #word_dict = {}
+    #This also works with a dictionary that already has entries
+    word_dict = {
+        'd': ['dominion'],
+        'e': ['exquisite'],
+        'f': ['formality']
+    }
 
     for word in words:
         # Get the first character of the word
@@ -33,13 +39,21 @@ def dictionaries():
         else:
             # If the key doesn't exist, create a new key-value pair with the word
             word_dict[first_char] = [word]
-    print(word_dict)
+    #alphabetize the dictionary.  sorted_keys puts the keys in alphabetical order.
+    sorted_keys = sorted(word_dict.keys())
+    #for every key in sorted keys, create the same key in the new dictionary, and the value is looked up
+    #from the original dictionary
+    alphabetical_dict = {key: word_dict[key] for key in sorted_keys}
+    print(alphabetical_dict)
 
 
 def towers_of_hanoi(n, source, target, intermediate):
+    #move the smallest disc to the destination and quit
     if n == 1:
         print(f"Move disk 1 from {source} to {target}")
         return
+    # Move discs from the source to the intermediate tower, using the target as a staging ground
     towers_of_hanoi(n-1, source, intermediate, target)
     print(f"Move disk {n} from {source} to {target}")
+    #Move discs from intermediate to target using source as a staging ground
     towers_of_hanoi(n-1, intermediate, target, source)
